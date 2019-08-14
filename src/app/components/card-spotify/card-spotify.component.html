@@ -1,0 +1,26 @@
+<div class="card animated fadeIn puntero" (click)="seeArtist( item )">
+    <img [src]="item.images | noimage" class="card-img-top" alt="item.artists.name">
+    <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+        <p  *ngIf="flag == 'home'" class="card-text">
+            <span *ngFor="let artist of item.artists">
+                <a href="#" class="badge badge-success">{{ artist.name }}</a>
+            </span>
+        </p>
+        <p  *ngIf="flag == 'search'" class="card-text">
+            <span *ngFor="let genre of item.genres">
+                <a href="#" class="badge badge-success">{{ genre }}</a>
+            </span>
+        </p>
+        <p *ngIf="flag == 'home'" class="card-title">
+            <span>
+                <a href="#" class="badge badge-dark">{{ item.release_date }}</a>
+            </span>
+        </p>
+        <p *ngIf="flag == 'search'" class="card-title">
+            <span>
+                <a href="#" class="badge badge-dark">{{ item.followers.total }}</a>
+            </span>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+<div class="row mb-5">
+    <div class="col">
+        <div class="search">
+            <input type="text" class="form-control" placeholder="Search artists" name="Search" [(ngModel)]="Search" ngModelOptions="{ standalone:true }">
+        </div>
+    </div>
+</div>
+<app-loading *ngIf="Loading"></app-loading>
+<div class="row mt-5">
+    <div class="column">
+        <div class="card-columns" *ngIf="!Loading">
+            <app-card-spotify [item]="item" [flag]="flag" *ngFor="let item of Artists"></app-card-spotify>
+        </div>
+    </div>
+</div>

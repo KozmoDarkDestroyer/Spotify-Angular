@@ -1,0 +1,4 @@
+<app-loading *ngIf="Loading" class="mt-5"></app-loading>
+<div class="card-columns" *ngIf="!Loading">
+    <app-card-spotify [item]='item' [flag]="flag" *ngFor="let item of NewRelases"></app-card-spotify>
+</div>
